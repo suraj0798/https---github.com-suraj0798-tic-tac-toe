@@ -26,6 +26,8 @@ function Login() {
        Axios.post("http://localhost:3001/login" ,user)
     .then((res) => {
       alert(res.data.message)
+      setUser(res.data.user)
+      navigate("/startPage")
     }) 
   }
 

@@ -5,15 +5,19 @@ import Homepage from './components/homepage/Homepage';
 import Login from './components/login/Login';
 import {Routes,Route} from 'react-router-dom';
 import Startpage from './components/startpage/Startpage';
+import { useState } from 'react';
 
 function App() {
+  const [user, setUser] = useState({})
   return (
     <div className="App">
         <Routes>
           <Route path="/" element={<Homepage/>}></Route>    
           <Route path="/signup" element={<Signup/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/startpage" element={<Startpage/>}></Route>
+          <Route path="/login" element={
+            user ? <Login/> : <Login setUser = {setUser}/>
+          }></Route>
+          <Route path="/startPage" element={<Startpage/>}></Route>
         </Routes>
         
     </div>
