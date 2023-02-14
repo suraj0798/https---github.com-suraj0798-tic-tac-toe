@@ -1,0 +1,77 @@
+.homePage {
+    width: 360px;
+    height: 350px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 7px;
+    justify-content: center;
+    box-shadow: 5px 5px 18px #9400d3;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+        /* padding: 70px 0 70px 0; */
+    text-align: center
+}
+
+.homePageHeader{
+    padding: 30px ;
+    font-size: 30px;
+    font-weight: 900;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 4px;
+    color: #ff00ff;
+    line-height: 50px;
+    text-shadow: 1px 1px 0px #c71585,
+                2px 2px 0px #4b0082,
+                3px 3px 0px #8b0000,
+                4px 4px 0px #ff4500,
+                6px 6px 0px #008080;
+}
+
+.logInbtn {
+    background-color: #00a8fe;
+    width: 320px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 20px  0 20px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+            /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.logInbtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signupbtn {
+    background-color: #ff459f;
+    width: 320px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin:10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+        /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 8px;
+}
+
+.signupbtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
