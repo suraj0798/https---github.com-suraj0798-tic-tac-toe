@@ -31,8 +31,7 @@ function Login() {
          navigate('/startPage')
       }else {
         alert(res.data.message)
-      } 
-         
+      }      
     })
   }
 

@@ -6,6 +6,7 @@ import Login from './components/login/Login';
 import {Routes,Route} from 'react-router-dom';
 import Startpage from './components/startpage/Startpage';
 import { useState } from 'react';
+import  Selectpage  from "./components/selectpage/Selectpage";
 
 function App() {
   const [user, setUser] = useState({})
@@ -18,6 +19,7 @@ function App() {
             user ? <Login/> : <Login setUser = {setUser}/>
           }></Route>
           <Route path="/startPage" element={<Startpage/>}></Route>
+          <Route path="/selectpage" element={<Selectpage/>}></Route>
         </Routes>
         
     </div>

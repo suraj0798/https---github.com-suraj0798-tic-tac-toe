@@ -1,0 +1,153 @@
+.selectBox {
+    max-width: 700px;
+    width: 360px;
+    height: 350px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 7px;
+    justify-content: center;
+    box-shadow: 5px 5px 18px #9400d3;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding: 70px 0 70px 0; */
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    padding: 0px 0px 0px;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.buttons button {
+    font-weight: 600;
+    font-size: 40px;
+    background: none;
+    margin: 0px 10px 50px 10px;
+    background-color: #bfbebe;
+    height: 50px;
+    width: 50px;
+    border-radius: 7px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.buttons button:target {
+    border-color: #ff459f;
+    border-width: 3px;
+}
+
+.icon {
+    cursor: pointer;
+    text-align: left;
+    margin-right: 10px;
+    margin-top: -30px;
+    position: absolute;
+    left: 20px;
+
+}
+
+
+
+.selectColors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    margin: -50px 10px -10px 10px;
+    
+}
+
+.redbutton {
+    background-color: #ff0000;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.bluebutton {
+    background-color: #0000ff;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.greenbutton {
+    background-color: #008000;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.violetbutton {
+    background-color: #8f00ff;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.orangebutton {
+    background-color: #ff5800;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.yellowbutton {
+    background-color: #ffea00;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.cyanbutton {
+    background-color: #00b7eb;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.pinkbutton {
+    background-color: #ff007f;
+    height: 40px;
+    width: 40px;
+    border-radius: 7px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.nextbtn button {
+    width: 320px;
+        margin: 20px 5px 20px 0px;
+        background-color: #ff459f;
+        border: none;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        border-radius: 8px;
+}
