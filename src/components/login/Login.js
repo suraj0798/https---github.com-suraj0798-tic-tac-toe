@@ -19,16 +19,21 @@ function Login() {
       ...user,
       [name]: value
     })
-
   }
 
+
   const login =() => {
-       Axios.post("http://localhost:3001/login" ,user)
+    Axios.post("http://localhost:3001/login" ,user)
     .then((res) => {
-      alert(res.data.message)
-      setUser(res.data.user)
-      navigate("/startPage")
-    }) 
+      if (res.data.message === "Login successful") {
+         alert(res.data.message)
+         setUser(res.data.user)
+         navigate('/startPage')
+      }else {
+        alert(res.data.message)
+      } 
+         
+    })
   }
 
   return (
@@ -51,5 +56,6 @@ function Login() {
     </div>
   )
 }
+
 
 export default Login

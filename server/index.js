@@ -30,10 +30,12 @@ app.post('/login', (req, res) => {
         const {  username, password} = (req.body)
         User.findOne({ username: username}, (err, user) => {
           if (user) {
-            if (password === user.password) {
-                res.send({message: 'Login successful', user: user})
-            } else {
+            if (password !== user.password) {
                 res.send({message: 'Please enter valid information'})
+            } else {
+              res.send({message: 'Login successful', user: user})
+                
+            
             }
           }else {
             res.send({message:"User not found"})
