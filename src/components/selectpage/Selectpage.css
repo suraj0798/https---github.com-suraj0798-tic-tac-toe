@@ -23,19 +23,38 @@ h3 {
     text-decoration: underline;
 }
 
-.buttons button {
-    font-weight: 600;
-    font-size: 40px;
+.radiobtn input {
+   
     background: none;
-    margin: 0px 10px 50px 10px;
+    margin: 0px 25px 30px 25px;
     background-color: #bfbebe;
     height: 50px;
     width: 50px;
     border-radius: 7px;
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
 }
 
-.buttons button:target {
+.radiobtn label {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    border: 2px solid rgba(255, 255, 255);
+    background-color: #bfbebe;
+    font-weight: 600;
+    font-size: 40px;
+    margin: 0px 32px 0 32px;
+    height: 100px;
+    width: 200px;
+    border-radius: 8px;
+    padding:0 10px 0 10px;
+}
+
+.radiobtn input:checked {
     border-color: #ff459f;
     border-width: 3px;
 }
@@ -57,7 +76,7 @@ h3 {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
-    margin: -50px 10px -10px 10px;
+    margin: 0px 10px -10px 10px;
     
 }
 
@@ -66,12 +85,14 @@ h3 {
     height: 40px;
     width: 40px;
     border-radius: 7px;
+    cursor: pointer;
     margin: 15px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .bluebutton {
     background-color: #0000ff;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;
@@ -81,6 +102,7 @@ h3 {
 
 .greenbutton {
     background-color: #008000;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;
@@ -90,6 +112,7 @@ h3 {
 
 .violetbutton {
     background-color: #8f00ff;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;
@@ -99,6 +122,7 @@ h3 {
 
 .orangebutton {
     background-color: #ff5800;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;
@@ -108,6 +132,7 @@ h3 {
 
 .yellowbutton {
     background-color: #ffea00;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;
@@ -117,6 +142,7 @@ h3 {
 
 .cyanbutton {
     background-color: #00b7eb;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;
@@ -126,6 +152,7 @@ h3 {
 
 .pinkbutton {
     background-color: #ff007f;
+    cursor: pointer;
     height: 40px;
     width: 40px;
     border-radius: 7px;

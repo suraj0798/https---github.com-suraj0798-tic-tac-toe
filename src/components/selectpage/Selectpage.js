@@ -32,9 +32,11 @@ function Selectpage() {
     <div className='selectBox'>
         <Link to = "/startPage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
         <h3>Select your mark</h3>
-        <div className='buttons'>
-           <button className="crossicon" style= {{color: color}}>X</button>
-           <button className="circleicon" style= {{color: color}}>O</button>
+        <div className='radiobtn'>
+           <input type= "radio" id="crossicon"  value= "X" name='radio'/>
+           <label htmlFor="crossicon" style= {{color: color}}>X</label>
+           <input type= "radio" id="circleicon"  value= "O" name='radio'/>
+           <label htmlFor= "circleicon" style= {{color: color}}>O</label>
         </div>
         <div className='selectColors'>
             <div className='redbutton' onClick={redbtnHandler}></div>
