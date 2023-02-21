@@ -54,20 +54,23 @@ h3 {
     padding:0 10px 0 10px;
 }
 
-.radiobtn input:checked {
+ input:checked + .radioicon {
     border-color: #ff459f;
     border-width: 3px;
+    box-shadow: 0 0 12px #ff459f;
 }
 
-.icon {
+.selectBox .icon {
     cursor: pointer;
     text-align: left;
     margin-right: 10px;
-    margin-top: -30px;
+    margin-top: 20px;
     position: absolute;
     left: 20px;
 
 }
+
+
 
 
 

@@ -34,9 +34,9 @@ function Selectpage() {
         <h3>Select your mark</h3>
         <div className='radiobtn'>
            <input type= "radio" id="crossicon"  value= "X" name='radio'/>
-           <label htmlFor="crossicon" style= {{color: color}}>X</label>
+           <label htmlFor="crossicon" className='radioicon' style= {{color: color}}>X</label>
            <input type= "radio" id="circleicon"  value= "O" name='radio'/>
-           <label htmlFor= "circleicon" style= {{color: color}}>O</label>
+           <label htmlFor= "circleicon" className='radioicon' style= {{color: color}}>O</label>
         </div>
         <div className='selectColors'>
             <div className='redbutton' onClick={redbtnHandler}></div>
