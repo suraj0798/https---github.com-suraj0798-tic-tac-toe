@@ -5,7 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
-function Selectpage() {
+function Selectpage({mark, onRadioChange}) {
        let red = "#ff0000";
        let blue = "#0000ff";
        let green = "#008000";
@@ -25,17 +25,19 @@ function Selectpage() {
     const cyanbtnHandler= () => {setColor(cyan)} ;
     const pinkbtnHandler= () => {setColor(pink)};
 
-    
+   
 
-
-  return (
+  //  const onSubmitMark = () =>{
+  //       console.log("this is submit",{mark},{color});
+  //  }
+    return (
     <div className='selectBox'>
         <Link to = "/startPage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
         <h3>Select your mark</h3>
         <div className='radiobtn'>
-           <input type= "radio" id="crossicon"  value= "X" name='radio'/>
+           <input type= "radio" id="crossicon"  value= "X" name='radio' style= {{color: color}} checked = {mark === "X"} onChange= {onRadioChange}/>
            <label htmlFor="crossicon" className='radioicon' style= {{color: color}}>X</label>
-           <input type= "radio" id="circleicon"  value= "O" name='radio'/>
+           <input type= "radio" id="circleicon"  value= "O" name='radio' style= {{color: color}} checked = {mark === "O"} onChange= {onRadioChange}/>
            <label htmlFor= "circleicon" className='radioicon' style= {{color: color}}>O</label>
         </div>
         <div className='selectColors'>
@@ -48,8 +50,9 @@ function Selectpage() {
             <div className='cyanbutton' onClick={cyanbtnHandler}></div>
             <div className='pinkbutton' onClick={pinkbtnHandler}></div>
         </div>
-        <div className='nextbtn'><button>Next</button></div>
-    </div>
+        <Link to="/board"><div className='nextbtn'><button >Start</button></div></Link>
+        
+    </div> 
   )
 }
 
