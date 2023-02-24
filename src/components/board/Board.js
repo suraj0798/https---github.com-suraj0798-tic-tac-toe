@@ -4,11 +4,49 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
 
+// ********start*******
+
+const playerTwo = () => {}
 
 
 
+const intialHistory = [{
+  squares: Array(9).fill(null),
+}];
 
-const findWinner = (squares) => {
+const intialState = {
+  history: intialHistory,
+  playerIsNext: true,
+  stepNumber: 0,
+  player: null,
+  winner: null,
+}
+
+// const gameInfo = () => {
+//   const {
+//     player,
+//     playerIsNext,
+//     history,
+//     winner,
+//     onClick,
+//     stepNumber,
+//   } 
+// }
+
+const status = () => {
+  if (winner) {
+    status = 'Winner is ' + winner;}
+  // }else if (player) {
+  //   const opponent = (player === "X") ? "O" : "X";
+  //   status = 'Next Player is ' + (playerIsNext ? player : opponent);
+  // }
+}
+
+ 
+
+
+
+const winner = (squares) => {
      const lines = [
       [0,1,2],[3,4,5],[6,7,8],[0,3,6],
       [1,4,7],[2,5,8],[0,4,8],[2,4,6]
@@ -25,52 +63,23 @@ const findWinner = (squares) => {
 
 
 
-function Board({mark}) {
+function Board({getmark,getcolor, onSubmithandler}) {
 
-  
-const findNextTurn =(squares)=>{
-  return squares.filter(Boolean).length % 2 === 0 ? "playerOne" : "playerTwo";
+const xSide = {getmark === "X"};
+const itsmark = () => {
+  return{getmark};
 }
-
-  
-const [squares, setSquares] = useState (Array(9).fill(null));
-// const [playerOneIsNext, setPlayerOneIsNext] = useState(true);
-const nextTurn = findNextTurn(squares);
-const winner = findWinner(squares);
-// const status = currentStatus(winner, squares, nextTurn);
-
-  
-const getMark = () =>{
-  console.log({mark});
-}
-
-
-const currentStatus = (winner,squares,nextTurn) => {
-      return     winner ? `Winner: ${winner}` 
-                 : squares.every(Boolean) 
-                 ? `Next Player:  ${nextTurn}` 
-                 : `Draw: draw` 
-}
-
-const selectSquare = (square)=> {
-    if (winner || squares[Square]){
-      return 
-    }
-    const squaresCopy = [...squares]
-    squaresCopy[square] = nextTurn 
-    setSquares(squaresCopy)
-}
-
-const restart =() => {
-  setSquares(Array(9).fill(null))
-}
-
-const Square = (i) => {
-    return <button className='square'onClick={getMark}/*>{props.value}*/>{mark}</button> ;   
+// const restart =() => {
+//   setSquares(Array(9).fill(null))
+// }
+const Square = () => {
+    return <button className='square' onClick= {itsmark}></button> ;   
 }
 
 
   return (
+
+    
     <div className='boardbox'>
        <Link to = "/selectpage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
        <div className='playerinfo'>
@@ -79,19 +88,19 @@ const Square = (i) => {
        </div>
       <div className='container'>
         <div className="board-row">
-            <Square value= "1" onClick= {() => onclick("value")}/>
-            <Square value= "1" onClick= {() => onclick("value")}/>
-            <Square value= "1" onClick= {() => onclick("value")}/>
+            <Square />
+            <Square />
+            <Square />
         </div>
          <div className="board-row">
-            <Square value= "1" onClick= {() => onclick("value")}/>
-            <Square value= "1" onClick= {() => onclick("value")}/>
-            <Square value= "1" onClick= {() => onclick("value")}/>
+            <Square />
+            <Square />
+            <Square />
         </div>
          <div className="board-row">
-            <Square value= "1" onClick= {() => onclick("value")}/>
-            <Square value= "1" onClick= {() => onclick("value")}/>
-            <Square value= "1" onClick= {() => onclick("value")}/>
+            <Square />
+            <Square />
+            <Square />
         </div>
       </div>  
     </div>
