@@ -28,7 +28,7 @@ function Login() {
       if (res.data.message === "Login successful") {
          alert(res.data.message)
          setUser(res.data.user)
-         navigate('/startPage')
+         navigate('/selectpage')
       }else {
         alert(res.data.message)
       }      

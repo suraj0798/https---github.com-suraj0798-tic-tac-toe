@@ -65,6 +65,14 @@
     z-index: 2;
 }
 
+.playerOneMark {
+    font-size: 30px;
+}
+
+.playerTwoMark {
+    font-size: 30px;
+}
+
 .square {
     background: #bfbebe;
     border: 2px solid #9400d3;

@@ -22,7 +22,7 @@ const calculateWinner = (squares) => {
 }
 
 
-function Board({mark, onSubmithandler}) {
+function Board({mark, user,onSubmithandler}) {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState (Array(9).fill(null));
   const winner = calculateWinner(squares);
@@ -50,6 +50,20 @@ const Square = ({ onSquareClick,value}) => {
     return <button className='square' onClick={onSquareClick}>{value}</button> ;   
 }
 
+  const markType = {
+    xMark : "X",
+    oMark : "O"
+  }
+
+  const secondMark=(markType) => {
+    if (mark === markType.xMark) {
+       return markType.oMark;
+    }else if (mark === markType.oMark) {
+      return markType.xMark;
+    }else{
+      return null;
+    }
+  }
 
   return (
 
@@ -57,8 +71,8 @@ const Square = ({ onSquareClick,value}) => {
     <div className='boardbox'>
        <Link to = "/selectpage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
        <div className='playerinfo'>
-          <div className='playerOne'>player1</div>
-          <div className='playerTwo'>player2</div>
+          <div className='playerOne'>Player One <div className='playerOneMark'>{mark}</div></div>
+          <div className='playerTwo'>Player Two <div className='playerTwoMark'>{secondMark(markType)}</div> </div>
        </div>
        <div className='status'>{status}</div>
       <div className='container'>

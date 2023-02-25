@@ -4,7 +4,6 @@ import Signup from './components/signup/Signup';
 import Homepage from './components/homepage/Homepage';
 import Login from './components/login/Login';
 import {Routes,Route} from 'react-router-dom';
-import Startpage from './components/startpage/Startpage';
 import { useState } from 'react';
 import  Selectpage  from "./components/selectpage/Selectpage";
 import Board  from "./components/board/Board";
@@ -31,7 +30,6 @@ function App() {
           <Route path="/login" element={
             user ? <Login/> : <Login setUser = {setUser}/>
           }></Route>
-          <Route path="/startPage" element={<Startpage/>}></Route>
           <Route path="/selectpage" element={<Selectpage mark={mark}
           onSubmithandler= {onSubmithandler} onRadioChange={onRadioChange}/>}></Route>
           <Route path='/board' element={<Board mark={mark} onSubmithandler= {onSubmithandler}/>}></Route>

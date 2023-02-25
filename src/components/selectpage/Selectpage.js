@@ -8,7 +8,6 @@ function Selectpage({mark,onSubmithandler,onRadioChange }) {
    
     return (
     <div className='selectBox'>
-        <Link to = "/startPage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
         <h3>Select your mark</h3>
         <div className='radiobtn'>
            <input type= "radio" id="crossicon"  value= "X" name='radio'
