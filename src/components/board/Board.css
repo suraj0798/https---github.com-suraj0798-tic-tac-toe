@@ -26,6 +26,7 @@
     margin-top: 15px;
     margin-left: 72px;
     justify-content: center;
+    display: flex;
     align-items: center;
 }
 

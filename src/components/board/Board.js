@@ -23,7 +23,9 @@ const calculateWinner = (squares) => {
 
 
 function Board({mark, user,onSubmithandler}) {
-  const [xIsNext, setXIsNext] = useState(true);
+  const [nextPlayer, setNextPlayer] = useState(true);
+  const [value, setValue] = useState();
+  const [nextMark, setNextMark] = useState();
   const [squares, setSquares] = useState (Array(9).fill(null));
   const winner = calculateWinner(squares);
   let status;
@@ -35,13 +37,20 @@ function Board({mark, user,onSubmithandler}) {
       return;
     }
     const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = 'X';
+    if (nextPlayer) {
+      nextSquares[i] = mark;
     }else {
-      nextSquares[i] = 'O';
+      if (mark === markType.xMark) {
+        nextSquares[i] = markType.oMark; 
+      }else {
+        nextSquares[i] = markType.xMark;
+      }
+      
     }
+
     setSquares(nextSquares);
-    setXIsNext({mark});
+    setNextPlayer(!nextPlayer);
+    console.log({mark});
   }
 
 
@@ -49,7 +58,7 @@ function Board({mark, user,onSubmithandler}) {
 const Square = ({ onSquareClick,value}) => {
     return <button className='square' onClick={onSquareClick}>{value}</button> ;   
 }
-
+ 
   const markType = {
     xMark : "X",
     oMark : "O"
