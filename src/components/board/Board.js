@@ -3,50 +3,11 @@ import "./Board.css";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
+import { render } from '@testing-library/react';
 
-// ********start*******
+// ********start*******  
 
-const playerTwo = () => {}
-
-
-
-const intialHistory = [{
-  squares: Array(9).fill(null),
-}];
-
-const intialState = {
-  history: intialHistory,
-  playerIsNext: true,
-  stepNumber: 0,
-  player: null,
-  winner: null,
-}
-
-// const gameInfo = () => {
-//   const {
-//     player,
-//     playerIsNext,
-//     history,
-//     winner,
-//     onClick,
-//     stepNumber,
-//   } 
-// }
-
-const status = () => {
-  if (winner) {
-    status = 'Winner is ' + winner;}
-  // }else if (player) {
-  //   const opponent = (player === "X") ? "O" : "X";
-  //   status = 'Next Player is ' + (playerIsNext ? player : opponent);
-  // }
-}
-
- 
-
-
-
-const winner = (squares) => {
+const calculateWinner = (squares) => {
      const lines = [
       [0,1,2],[3,4,5],[6,7,8],[0,3,6],
       [1,4,7],[2,5,8],[0,4,8],[2,4,6]
@@ -61,19 +22,32 @@ const winner = (squares) => {
 }
 
 
+function Board({mark, onSubmithandler}) {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [squares, setSquares] = useState (Array(9).fill(null));
+  const winner = calculateWinner(squares);
+  let status;
+  if (winner) {
+    status = "Winner is " + winner;
+  }
+  const handleClick = (i) => {
+    if (squares[i] || calculateWinner(squares)) {
+      return;
+    }
+    const nextSquares = squares.slice();
+    if (xIsNext) {
+      nextSquares[i] = 'X';
+    }else {
+      nextSquares[i] = 'O';
+    }
+    setSquares(nextSquares);
+    setXIsNext({mark});
+  }
 
 
-function Board({getmark,getcolor, onSubmithandler}) {
 
-const xSide = {getmark === "X"};
-const itsmark = () => {
-  return{getmark};
-}
-// const restart =() => {
-//   setSquares(Array(9).fill(null))
-// }
-const Square = () => {
-    return <button className='square' onClick= {itsmark}></button> ;   
+const Square = ({ onSquareClick,value}) => {
+    return <button className='square' onClick={onSquareClick}>{value}</button> ;   
 }
 
 
@@ -86,21 +60,22 @@ const Square = () => {
           <div className='playerOne'>player1</div>
           <div className='playerTwo'>player2</div>
        </div>
+       <div className='status'>{status}</div>
       <div className='container'>
         <div className="board-row">
-            <Square />
-            <Square />
-            <Square />
+            <Square  value = {squares[0]} onSquareClick={() => handleClick(0)}/>
+            <Square  value = {squares[1]} onSquareClick={() =>handleClick(1)}/>
+            <Square  value = {squares[2]} onSquareClick={() =>handleClick(2)}/>
         </div>
          <div className="board-row">
-            <Square />
-            <Square />
-            <Square />
+            <Square value = {squares[3]} onSquareClick={() =>handleClick(3)}/>
+            <Square value = {squares[4]} onSquareClick={() =>handleClick(4)}/>
+            <Square value = {squares[5]} onSquareClick={() =>handleClick(5)}/>
         </div>
          <div className="board-row">
-            <Square />
-            <Square />
-            <Square />
+            <Square value = {squares[6]} onSquareClick={() =>handleClick(6)}/> 
+            <Square value = {squares[7]} onSquareClick={() =>handleClick(7)}/>
+            <Square value = {squares[8]} onSquareClick={() =>handleClick(8)}/>
         </div>
       </div>  
     </div>

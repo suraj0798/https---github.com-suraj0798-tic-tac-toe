@@ -19,7 +19,7 @@
 h3 {
     text-align: center;
     padding: 0px 0px 0px;
-    margin-top: 20px;
+    margin: 20px 0px 50px;
     text-decoration: underline;
 }
 
@@ -47,7 +47,7 @@ h3 {
     background-color: #bfbebe;
     font-weight: 600;
     font-size: 40px;
-    margin: 0px 32px 0 32px;
+    margin: 20px 32px 0 32px;
     height: 100px;
     width: 100px;
     border-radius: 8px;
@@ -70,102 +70,9 @@ h3 {
 
 }
 
-
-
-
-
-.selectColors {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-    margin: 0px 10px -10px 10px;
-    
-}
-
-.redbutton {
-    background-color: #ff0000;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    cursor: pointer;
-    margin: 15px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.bluebutton {
-    background-color: #0000ff;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 15px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.greenbutton {
-    background-color: #008000;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 15px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.violetbutton {
-    background-color: #8f00ff;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 15px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.orangebutton {
-    background-color: #ff5800;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.yellowbutton {
-    background-color: #ffea00;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.cyanbutton {
-    background-color: #00b7eb;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
-.pinkbutton {
-    background-color: #ff007f;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
-    border-radius: 7px;
-    margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-
 .nextbtn button {
     width: 320px;
-        margin: 20px 5px 20px 0px;
+        margin: 120px 5px 20px 0px;
         background-color: #ff459f;
         border: none;
         color: white;

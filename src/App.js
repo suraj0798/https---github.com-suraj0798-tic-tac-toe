@@ -11,41 +11,17 @@ import Board  from "./components/board/Board";
 
 function App() {
   const [user, setUser] = useState({})
-  // const getMark = (data) => {
-  //     console.log("this is on submit",data)
-  // }
   const [mark, setMark] = useState("");
-  const [color, setColor] = useState("black");
 
-    let red = "#ff0000";
-       let blue = "#0000ff";
-       let green = "#008000";
-       let violet = "#8f00ff";
-       let orange = "#ff5800";
-       let yellow = "#ffea00";
-       let cyan = "#00b7eb";
-       let pink = "#ff007f";
-
-  const redbtnHandler= () => {setColor(red)};
-    const bluebtnHandler= () => {setColor(blue)};
-    const greenbtnHandler= () => {setColor(green)};
-    const violetbtnHandler= () => {setColor(violet)};
-    const orangebtnHandler= () => {setColor(orange)} ;
-    const yellowbtnHandler= () => {setColor(yellow)};
-    const cyanbtnHandler= () => {setColor(cyan)} ;
-    const pinkbtnHandler= () => {setColor(pink)};
-
-   const onRadioChange = (event) =>{
+  const onRadioChange = (event) =>{
        setMark(event.target.value);
-       console.log("this is radiobtn",{mark},{color});
+       console.log("this is radiobtn",{mark});
    }
 
-   const onSubmithandler = (event) =>{
+  const onSubmithandler = (event) =>{
+    event.preventDefault();
       setMark(event.target.value);
-      setColor(event.target.value);
-      console.log("this is onsubmit",{mark},{color});
    }
-  
   
   return (
     <div className="App">
@@ -56,13 +32,9 @@ function App() {
             user ? <Login/> : <Login setUser = {setUser}/>
           }></Route>
           <Route path="/startPage" element={<Startpage/>}></Route>
-          <Route path="/selectpage" element={<Selectpage mark={mark} color= {color}
-          onSubmithandler= {onSubmithandler}
-           cyanbtnHandler= {cyanbtnHandler} pinkbtnHandler= {pinkbtnHandler}
-           bluebtnHandler={bluebtnHandler} greenbtnHandler={greenbtnHandler} violetbtnHandler={violetbtnHandler}
-           orangebtnHandler= {orangebtnHandler} yellowbtnHandler={yellowbtnHandler} 
-           redbtnHandler={redbtnHandler} onRadioChange={onRadioChange}/>}></Route>
-          <Route path='/board' element={<Board getmark={mark} getcolor={color} onSubmithandler= {onSubmithandler}/>}></Route>
+          <Route path="/selectpage" element={<Selectpage mark={mark}
+          onSubmithandler= {onSubmithandler} onRadioChange={onRadioChange}/>}></Route>
+          <Route path='/board' element={<Board mark={mark} onSubmithandler= {onSubmithandler}/>}></Route>
         </Routes>
         
     </div>
