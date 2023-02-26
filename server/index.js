@@ -1,14 +1,14 @@
 import  express  from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import { useNavigate } from "react-router-dom";
+
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
-
+// ***********mongodb connection***********
 mongoose.connect('mongodb://127.0.0.1:27017/tic-tac-toe',{
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
 
 const User = new mongoose.model("User", userSchema)
 
-
+// *********login page connections*********
 app.post('/login', (req, res) => {
         const {  username, password} = (req.body)
         User.findOne({ username: username}, (err, user) => {
@@ -43,6 +43,7 @@ app.post('/login', (req, res) => {
         })
 })
 
+// **********signup page connections**********
 app.post('/signup', (req, res) => {
     const { name, username, email, password} = (req.body)
     User.findOne({ username: username}, (err, user) => {

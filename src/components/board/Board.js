@@ -3,10 +3,10 @@ import "./Board.css";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
-import { render } from '@testing-library/react';
+
 
 // ********start*******  
-
+// **********calcutaling winner************
 const calculateWinner = (squares) => {
      const lines = [
       [0,1,2],[3,4,5],[6,7,8],[0,3,6],
@@ -21,22 +21,39 @@ const calculateWinner = (squares) => {
       return null;
 }
 
-
-function Board({mark, user,onSubmithandler}) {
+function Board({mark}) {
   const [nextPlayer, setNextPlayer] = useState(true);
-  const [value, setValue] = useState();
-  const [nextMark, setNextMark] = useState();
   const [squares, setSquares] = useState (Array(9).fill(null));
   const winner = calculateWinner(squares);
-  let status;
-  if (winner) {
-    status = "Winner is " + winner;
+
+  // *******restart function********
+  const restart = () => {
+      setSquares(Array(9).fill(null))
+      setNextPlayer(true)
   }
+
+  // ********after winning rendering winning modal **********
+  let status;
+  
+  if (winner) {
+      status =  <div> 
+                  <div className="modalContainer">
+                    <div className="cookiesContent" id="cookiesPopup">
+                      <img src="https://img.freepik.com/premium-vector/gold-trophy-with-name-plate-winner-competition_68708-545.jpg?size=338&ext=jpg&ga=GA1.2.1450992504.1662566345&semt=sph.png" alt="cookies-img" />
+                      <p>Winner :  {winner}</p>
+                      <button className="accept" onClick={restart}>Restart</button>
+                    </div>
+                  </div>
+                </div>
+  }
+
+  // ******** handleing click on squares alternate "X"-"O"**********
+  const nextSquares = squares.slice();
+   
   const handleClick = (i) => {
     if (squares[i] || calculateWinner(squares)) {
-      return;
+      return ;
     }
-    const nextSquares = squares.slice();
     if (nextPlayer) {
       nextSquares[i] = mark;
     }else {
@@ -44,20 +61,15 @@ function Board({mark, user,onSubmithandler}) {
         nextSquares[i] = markType.oMark; 
       }else {
         nextSquares[i] = markType.xMark;
-      }
-      
+      }  
     }
-
     setSquares(nextSquares);
     setNextPlayer(!nextPlayer);
-    console.log({mark});
   }
 
-
-
-const Square = ({ onSquareClick,value}) => {
+  const Square = ({ onSquareClick,value}) => {
     return <button className='square' onClick={onSquareClick}>{value}</button> ;   
-}
+  }
  
   const markType = {
     xMark : "X",
@@ -76,15 +88,17 @@ const Square = ({ onSquareClick,value}) => {
 
   return (
 
-    
     <div className='boardbox'>
-       <Link to = "/selectpage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
-       <div className='playerinfo'>
+        <Link to = "/selectpage"><div className='icon' ><IoMdArrowRoundBack/></div></Link>
+        <div className='playerinfo'>
           <div className='playerOne'>Player One <div className='playerOneMark'>{mark}</div></div>
           <div className='playerTwo'>Player Two <div className='playerTwoMark'>{secondMark(markType)}</div> </div>
-       </div>
-       <div className='status'>{status}</div>
-      <div className='container'>
+        </div>
+        <div className='status'>          
+          {status }
+        </div>
+  
+        <div className='container'>
         <div className="board-row">
             <Square  value = {squares[0]} onSquareClick={() => handleClick(0)}/>
             <Square  value = {squares[1]} onSquareClick={() =>handleClick(1)}/>
